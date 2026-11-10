@@ -1,0 +1,7 @@
+# 개인 문서
+*.docx
+
+# 사이트에서 쓰지 않는 원본 파일 (웹용 JPG/MP4로 변환해서 사용)
+images/KIMeJ..png
+images/work/*.png
+video/jinju-hero-original.mp4

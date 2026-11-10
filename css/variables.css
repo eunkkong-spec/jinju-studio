@@ -1,0 +1,78 @@
+:root {
+  /* 색 */
+  --surface: #f6f4f7;
+  --surface-raised: #ffffff;
+  --surface-card: #ece8ef;
+  --placeholder: #e3dfe6;
+  --line: #b3a8bd;
+  --line-soft: #ddd6e2;
+
+  --ink: #3a3340;
+  --ink-soft: #5a5262;
+  --ink-muted: #7a6f84;
+
+  --plum: #4a3f55;
+  --on-plum: #ffffff;
+
+  --pearl: #ffffff;
+  --pearl-mid: #efe6f0;
+  --pearl-edge: #c9b8d3;
+
+  --hero-ground: #8f8597;
+  --hero-ink: #ffffff;
+  --hero-veil: rgba(48, 32, 58, .5);
+  --hero-shade: rgba(40, 24, 50, .7);
+
+  /* 글꼴 */
+  --font-display: 'Cormorant Garamond', 'Noto Serif KR', serif;
+  --font-serif: 'Noto Serif KR', serif;
+  --font-sans: 'Noto Sans KR', system-ui, sans-serif;
+
+  --fs-hero-title: clamp(72px, 10.4vw, 150px);
+  --fs-hero-copy: clamp(16px, 1.5vw, 22px);
+  --fs-section-sign: 34px;
+  --fs-lead: 34px;
+  --fs-card-title: 18px;
+  --fs-body: 17px;
+  --fs-body-sm: 14px;
+  --fs-nav: 17px;
+  --fs-label: 15px;
+  --fs-chip: 14px;
+  --fs-caption: 12px;
+
+  /* 간격 */
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 64px;
+  --section-x: 120px;
+  --section-y: 120px;
+
+  /* 모서리 */
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-pill: 999px;
+
+  /* 그림자 */
+  --shadow-pearl: 0 1px 4px rgba(74, 63, 85, .35);
+  --shadow-hero-text: 0 2px 2px rgba(40, 24, 50, .7), 0 4px 12px rgba(40, 24, 50, .6), 0 8px 36px rgba(40, 24, 50, .55);
+}
+
+@media (max-width: 1024px) {
+  :root { --section-x: 40px; --fs-lead: 28px; }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-x: 20px;
+    --section-y: 72px;
+    --fs-section-sign: 26px;
+    --fs-lead: 24px;
+    --fs-body: 15px;
+    --fs-nav: 14px;
+    --fs-label: 12px;
+  }
+}
