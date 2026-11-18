@@ -70,7 +70,19 @@ const WORKS = [
       '머물나무 카페 메뉴와 이달의 소식으로 오프라인 공간의 활동을 기록',
       '운영 정보와 오시는 길 지도로 방문 유도',
     ],
-    url: 'https://eunkkong-spec.github.io/meomul-namu/index.html', period: '', tools: '',
+    highlight: {
+      title: 'AI로 만든 8막 영상 히어로',
+      text: '나무 한 그루와 세 세대를 담은 8막 콘티를 짜고, Gemini로 장면 그림을, Google Flow로 장면 영상을 만들었습니다. 장면을 이어 붙이고 1080p로 화질을 높여 풀스크린 히어로로 올렸고, 음원은 협업으로 받아 소리 버튼으로 켜도록 했습니다.',
+    },
+    url: 'https://eunkkong-spec.github.io/meomul-namu/index.html',
+    period: '2026.10.30 ~ 11.09 (11일)',
+    tools: [
+      { group: '기획', items: ['Notion', '8막 스토리보드'] },
+      { group: '디자인', items: ['Figma', '로고 · 포스터 · 굿즈 직접 디자인'] },
+      { group: '개발·배포', items: ['HTML · CSS (VS Code)', 'GitHub Pages'] },
+      { group: 'AI 활용', items: ['Google Flow (영상)', 'Gemini (이미지)', 'Claude (영상 편집 보조)'] },
+      { group: '사운드·홍보', items: ['음원 협업', 'Instagram 릴스'] },
+    ],
   },
   {
     title: '슈가퐁당 일체형 리뉴얼',
