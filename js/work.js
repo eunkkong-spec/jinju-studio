@@ -90,6 +90,7 @@ const WORKS = [
     },
     url: 'https://eunkkong-spec.github.io/meomul-namu/index.html',
     plan: 'https://app.notion.com/p/4126f381487a817e90d8d8cbc5b6ef8b',
+    figma: 'https://www.figma.com/design/SWkn7EjAk5vdqCji27mCVc/%EB%A8%B8%EB%AC%BC%EB%82%98%EB%AC%B4%EC%B5%9C%EC%A2%85?node-id=0-1',
     period: '2026.10.30 ~ 11.09 (11일)',
     tools: [
       { group: '기획', items: ['Notion', '8막 스토리보드'] },
