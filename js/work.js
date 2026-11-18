@@ -107,7 +107,7 @@ const WORKS = [
     url: 'https://eunkkong-spec.github.io/sugar-pongdang/',
     plan: 'https://canva.link/yaadxs193qj04z9',
     figma: 'https://www.figma.com/design/vBb3R9sgZ9J06401v0GMWz/%EC%8A%88%EA%B0%80%ED%90%81%EB%8B%B9?node-id=0-1',
-    period: '총 2일',
+    period: '2026.11.07 ~ 11.09',
     tools: [
       { group: '기획', items: ['카페24 템플릿 벤치마킹', 'Canva', 'Notion'] },
       { group: '디자인', items: ['Figma (모바일 420px UI)'] },
