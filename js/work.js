@@ -108,7 +108,7 @@ const WORKS = [
     tools: [
       { group: '기획·디자인', items: ['Canva', 'Figma', 'Illustrator'] },
       { group: '개발·배포', items: ['VS Code', 'GitHub Pages'] },
-      { group: 'AI 활용', items: ['Claude', 'ChatGPT', 'Gemini'] },
+      { group: 'AI 활용', items: ['Claude', 'ChatGPT'] },
     ],
   },
 ];
