@@ -52,7 +52,12 @@ const WORKS = [
     ],
     url: 'https://eunkkong-spec.github.io/haru/',
     figma: 'https://www.figma.com/design/z6fAFDxNRcAKclQBM6GOCD/HARU-%EC%98%81%EC%96%91%EC%A0%9C---%EB%A9%94%EC%9D%B8-%EC%99%80%EC%9D%B4%EC%96%B4%ED%94%84%EB%A0%88%EC%9E%84?node-id=0-1',
-    period: '', tools: '',
+    period: '2026.11.04 ~ 11.09 (6일)',
+    tools: [
+      { group: '디자인', items: ['Figma'] },
+      { group: '개발·배포', items: ['HTML · CSS', 'JavaScript', 'GitHub Pages'] },
+      { group: 'AI 활용', items: ['Google Flow', 'Gemini'] },
+    ],
   },
   {
     title: '머물나무',
