@@ -50,7 +50,9 @@ const WORKS = [
       'HARU NOTE 영양 콘텐츠로 체류 유도',
       '구매하기 버튼으로 정식 쇼핑몰에 판매를 연결하는 구조',
     ],
-    url: 'https://eunkkong-spec.github.io/haru/', period: '', tools: '',
+    url: 'https://eunkkong-spec.github.io/haru/',
+    figma: 'https://www.figma.com/design/z6fAFDxNRcAKclQBM6GOCD/HARU-%EC%98%81%EC%96%91%EC%A0%9C---%EB%A9%94%EC%9D%B8-%EC%99%80%EC%9D%B4%EC%96%B4%ED%94%84%EB%A0%88%EC%9E%84?node-id=0-1',
+    period: '', tools: '',
   },
   {
     title: '머물나무',
