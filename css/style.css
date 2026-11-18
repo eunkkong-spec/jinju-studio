@@ -423,12 +423,15 @@ html.modal-open { overflow: hidden; }
 .work-modal-info h4 { margin-top: var(--space-1); font-size: var(--fs-label); font-weight: 700; }
 .work-modal-points { padding-left: 1.2em; display: grid; gap: var(--space-1); font-size: var(--fs-body-sm); line-height: 1.7; color: var(--ink-soft); }
 .work-modal-points li::marker { color: var(--pearl-edge); font-weight: 700; }
-.work-modal-visit {
-  align-self: flex-start; margin-top: var(--space-2);
+.work-modal-links { margin-top: var(--space-2); display: flex; flex-wrap: wrap; gap: var(--space-1); }
+.work-modal-visit,
+.work-modal-plan {
   padding: 12px 24px; border-radius: var(--radius-pill);
   background: var(--plum); color: var(--on-plum); font-size: var(--fs-body-sm); font-weight: 500;
 }
-.work-modal-visit[hidden] { display: none; }
+.work-modal-plan { background: transparent; color: var(--plum); box-shadow: inset 0 0 0 1px var(--plum); }
+.work-modal-visit[hidden],
+.work-modal-plan[hidden] { display: none; }
 .work-modal-nav { margin-top: auto; padding-top: var(--space-4); display: flex; justify-content: space-between; gap: var(--space-2); }
 .work-modal-nav button {
   padding: 10px 16px; border: 1px solid var(--line-soft); border-radius: var(--radius-pill);
