@@ -1,6 +1,8 @@
 // 포트폴리오 데이터: 작업을 추가하려면 이 배열에 항목을 넣는다
 // device: 'desktop' 은 브라우저 창 프레임, 'mobile' 은 스마트폰 프레임
 // url / period / tools 가 비어 있으면 상세 보기에서 버튼·자리 표시로 대신한다
+// tools: 문자열 또는 [{ group, items: [...] }] 형태로 분야별로 묶을 수 있다
+// highlight: 꼭 알리고 싶은 기술을 강조 박스로 보여준다 (없으면 생략)
 const WORKS = [
   {
     title: '나라바이오 리뉴얼',
@@ -9,7 +11,11 @@ const WORKS = [
     card: 'images/work/narabio-card.jpg',
     detail: 'images/work/narabio-detail.jpg',
     summary: '영농인과 텃밭 사용자를 나눠 안내하는 제독 유황 기술 기업 홈페이지',
-    tags: ['기업 홈페이지', '영상 히어로', '사용자 맞춤 동선'],
+    tags: ['기업 홈페이지', '영상 히어로', '농사로 API 연동'],
+    highlight: {
+      title: '농사로 Open API 연동',
+      text: '농촌진흥청 농사로 API에서 주간농사정보와 병해충정보를 받아와 보여줍니다. GitHub Actions가 API 키를 Secrets에 숨긴 채 데이터를 미리 받아 JSON으로 저장하기 때문에, 키를 노출하지 않고 최신 농사 정보를 제공합니다.',
+    },
     points: [
       '3장 영상 슬라이드 히어로에 검색창과 해시태그 바로가기를 두어 첫 화면에서 바로 정보를 찾도록 구성',
       '전문 영농인 / 가정 텃밭으로 사용자 유형별 동선을 나눔',
@@ -18,7 +24,14 @@ const WORKS = [
       '현장 재배 이야기와 모두싹TV로 실제 사례 중심의 설득',
       '대리점 찾기 · 상담 전화로 구매와 상담 전환 유도',
     ],
-    url: 'https://eunkkong-spec.github.io/modoossak/index.html', period: '', tools: '',
+    url: 'https://eunkkong-spec.github.io/modoossak/index.html',
+    period: '총 14일 (기획·디자인 10일 · 코딩·배포 4일)',
+    tools: [
+      { group: '기획·디자인', items: ['Canva', 'Figma'] },
+      { group: '영상', items: ['AI 영상 생성', 'Gemini'] },
+      { group: '개발·배포', items: ['VS Code', 'GitHub Pages', 'GitHub Actions'] },
+      { group: 'AI 활용', items: ['Claude', 'ChatGPT', 'Gemini'] },
+    ],
   },
   {
     title: 'HARU 하루 영양제',
@@ -73,6 +86,24 @@ const WORKS = [
       '카톡 상담 · 단체 대량 주문 문의로 상담 전환',
     ],
     url: 'https://eunkkong-spec.github.io/sugar-pongdang/', period: '', tools: '',
+  },
+  {
+    title: 'The Rolling Stones 팬 페이지',
+    label: 'eunkkong-spec.github.io/rolling-stone',
+    device: 'desktop',
+    card: 'images/work/rollingstone-card.jpg',
+    detail: 'images/work/rollingstone-detail.jpg',
+    summary: '구르는 돌이 검게 칠해지는 이야기로 Paint It, Black을 풀어낸 인터랙티브 팬 페이지',
+    tags: ['인터랙티브 스토리텔링', '가로 넘김 11장', '유튜브 음악 재생'],
+    points: [
+      '발자국 → 구르는 돌 → 검게 칠하기로 이어지는 11장 가로 넘김 스토리로 곡 제목을 장면으로 연출',
+      '돌을 누르면 검게 칠해지고, 믹 재거가 페인트 통을 걷어차면 Paint It, Black이 재생되는 클릭 인터랙션',
+      '쏟아진 페인트가 대문을 타고 흘러내려 화면 전체를 검게 덮는 장면 전환',
+      '사진 · 스티커 · 테이프 콜라주로 록 밴드의 거친 감성을 표현',
+      '처음엔 순서대로 끝까지 보게 하고, 다 본 뒤에는 페이지 목록으로 바로 이동하도록 설계',
+      '소리 켜기/끄기 선택, 발자국 · 웃음 효과음, 유튜브 영상은 모달로 재생',
+    ],
+    url: 'https://eunkkong-spec.github.io/rolling-stone/', period: '', tools: '',
   },
 ];
 
@@ -142,7 +173,21 @@ function fillModal(i) {
   q('.work-modal-summary').textContent = work.summary;
   q('.work-modal-tags').innerHTML = tagsMarkup(work.tags);
   q('.work-modal-period').textContent = work.period || '[작업 기간]';
-  q('.work-modal-tools').textContent = work.tools || '[사용 툴]';
+  const tools = q('.work-modal-tools');
+  if (Array.isArray(work.tools)) {
+    tools.innerHTML = work.tools
+      .map(t => `<span class="tool-row"><b>${t.group}</b>${t.items.join(' · ')}</span>`)
+      .join('');
+  } else {
+    tools.textContent = work.tools || '[사용 툴]';
+  }
+
+  const highlight = q('.work-modal-highlight');
+  highlight.hidden = !work.highlight;
+  if (work.highlight) {
+    highlight.querySelector('strong').textContent = work.highlight.title;
+    highlight.querySelector('p').textContent = work.highlight.text;
+  }
   q('.work-modal-points').innerHTML = work.points.map(p => `<li>${p}</li>`).join('');
 
   const visit = q('.work-modal-visit');

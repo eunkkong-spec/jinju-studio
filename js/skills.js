@@ -263,6 +263,30 @@ stage.addEventListener('keydown', e => {
   if (e.key === 'ArrowRight') { e.preventDefault(); go(active + 1); }
 });
 
+// 마우스를 누르지 않고 좌우로 움직이기만 해도 넘기기
+// (오른쪽으로 움직이면 다음 카드, 카드가 뒤집혀 있으면 설명을 읽는 중이므로 멈춤)
+const HOVER_STEP = 90;      // 이만큼(px) 움직이면 한 장 넘김
+const HOVER_COOLDOWN = 300; // 넘긴 뒤 잠시 대기(ms)
+let hoverX = null;
+let hoverAcc = 0;
+let hoverLock = 0;
+
+stage.addEventListener('pointermove', e => {
+  if (e.pointerType !== 'mouse' || e.buttons !== 0) return;
+  if (hoverX === null || cards.some(card => card.classList.contains('is-flipped'))) {
+    hoverX = e.clientX;
+    hoverAcc = 0;
+    return;
+  }
+  hoverAcc += e.clientX - hoverX;
+  hoverX = e.clientX;
+  if (Date.now() < hoverLock || Math.abs(hoverAcc) < HOVER_STEP) return;
+  go(active + (hoverAcc > 0 ? 1 : -1));
+  hoverAcc = 0;
+  hoverLock = Date.now() + HOVER_COOLDOWN;
+});
+stage.addEventListener('pointerleave', () => { hoverX = null; hoverAcc = 0; });
+
 // 드래그 / 스와이프로 넘기기
 let startX = null;
 stage.addEventListener('pointerdown', e => {
