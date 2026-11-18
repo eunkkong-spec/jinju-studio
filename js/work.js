@@ -89,6 +89,7 @@ const WORKS = [
       text: '나무 한 그루와 세 세대를 담은 8막 콘티를 짜고, Gemini로 장면 그림을, Google Flow로 장면 영상을 만들었습니다. 장면을 이어 붙이고 1080p로 화질을 높여 풀스크린 히어로로 올렸고, 음원은 협업으로 받아 소리 버튼으로 켜도록 했습니다.',
     },
     url: 'https://eunkkong-spec.github.io/meomul-namu/index.html',
+    plan: 'https://app.notion.com/p/4126f381487a817e90d8d8cbc5b6ef8b',
     period: '2026.10.30 ~ 11.09 (11일)',
     tools: [
       { group: '기획', items: ['Notion', '8막 스토리보드'] },
