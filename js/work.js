@@ -1,7 +1,7 @@
 // 포트폴리오 데이터: 작업을 추가하려면 이 배열에 항목을 넣는다
 // device: 'desktop' 은 브라우저 창 프레임, 'mobile' 은 스마트폰 프레임
 // url / period / tools 가 비어 있으면 상세 보기에서 버튼·자리 표시로 대신한다
-// tools: 문자열 또는 [{ group, items: [...] }] 형태로 분야별로 묶을 수 있다
+// period / tools: 문자열 또는 [{ group, items: [...] }] 형태로 분야별로 묶을 수 있다
 // highlight: 꼭 알리고 싶은 기술을 강조 박스로 보여준다 (없으면 생략)
 // plan / figma: 기획서·피그마 링크 (있으면 '기획서 보기'·'피그마 보기' 버튼이 생긴다)
 const WORKS = [
@@ -52,7 +52,10 @@ const WORKS = [
     ],
     url: 'https://eunkkong-spec.github.io/haru/',
     figma: 'https://www.figma.com/design/z6fAFDxNRcAKclQBM6GOCD/HARU-%EC%98%81%EC%96%91%EC%A0%9C---%EB%A9%94%EC%9D%B8-%EC%99%80%EC%9D%B4%EC%96%B4%ED%94%84%EB%A0%88%EC%9E%84?node-id=0-1',
-    period: '2026.11.04 ~ 11.09 (6일)',
+    period: [
+      { group: '기획', items: ['2026.10 (A·B·C안 구상)'] },
+      { group: '제작', items: ['2026.11.04 ~ 11.09'] },
+    ],
     tools: [
       { group: '디자인', items: ['Figma'] },
       { group: '개발·배포', items: ['HTML · CSS', 'JavaScript', 'GitHub Pages'] },
@@ -198,6 +201,17 @@ window.addEventListener('resize', () => grid.querySelectorAll('.work-screen').fo
 // ---------- 상세 보기 ----------
 const q = sel => modal.querySelector(sel);
 
+// 작업 기간·사용 툴: 배열이면 분야별 줄로, 문자열이면 그대로
+function fillRows(el, value, placeholder) {
+  if (Array.isArray(value)) {
+    el.innerHTML = value
+      .map(t => `<span class="tool-row"><b>${t.group}</b>${t.items.join(' · ')}</span>`)
+      .join('');
+  } else {
+    el.textContent = value || placeholder;
+  }
+}
+
 function fillModal(i) {
   const work = WORKS[i];
   openIndex = i;
@@ -213,15 +227,8 @@ function fillModal(i) {
   q('.work-modal-title').textContent = work.title;
   q('.work-modal-summary').textContent = work.summary;
   q('.work-modal-tags').innerHTML = tagsMarkup(work.tags);
-  q('.work-modal-period').textContent = work.period || '[작업 기간]';
-  const tools = q('.work-modal-tools');
-  if (Array.isArray(work.tools)) {
-    tools.innerHTML = work.tools
-      .map(t => `<span class="tool-row"><b>${t.group}</b>${t.items.join(' · ')}</span>`)
-      .join('');
-  } else {
-    tools.textContent = work.tools || '[사용 툴]';
-  }
+  fillRows(q('.work-modal-period'), work.period, '[작업 기간]');
+  fillRows(q('.work-modal-tools'), work.tools, '[사용 툴]');
 
   const highlight = q('.work-modal-highlight');
   highlight.hidden = !work.highlight;
