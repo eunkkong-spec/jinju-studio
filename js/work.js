@@ -118,6 +118,7 @@ const WORKS = [
       '소리 켜기/끄기 선택, 발자국 · 웃음 효과음, 유튜브 영상은 모달로 재생',
     ],
     url: 'https://eunkkong-spec.github.io/rolling-stone/',
+    figma: 'https://www.figma.com/design/cojt81uJEd0bYi3DdoFkXD/%EA%B5%AC%EB%A5%B4%EB%8A%94%EB%8F%8C?node-id=0-1',
     period: '총 3일',
     tools: [
       { group: '기획·디자인', items: ['Canva', 'Figma', 'Illustrator'] },
