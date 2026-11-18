@@ -26,7 +26,11 @@ const WORKS = [
       '대리점 찾기 · 상담 전화로 구매와 상담 전환 유도',
     ],
     url: 'https://eunkkong-spec.github.io/modoossak/index.html',
-    period: '총 14일 (기획·디자인 10일 · 코딩·배포 4일)',
+    period: [
+      { group: '전체', items: ['2026.09.30 ~ 2026.10.22 (실작업 14일, 주말·공휴일 제외)'] },
+      { group: '기획·시안', items: ['09.30 ~ 10.18'] },
+      { group: '코딩·배포', items: ['10.19 ~ 10.22'] },
+    ],
     tools: [
       { group: '기획·디자인', items: ['Canva', 'Figma'] },
       { group: '영상', items: ['AI 영상 생성', 'Gemini'] },
