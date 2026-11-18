@@ -85,7 +85,18 @@ const WORKS = [
       '포토후기 이벤트와 고객 후기로 신뢰 확보',
       '카톡 상담 · 단체 대량 주문 문의로 상담 전환',
     ],
-    url: 'https://eunkkong-spec.github.io/sugar-pongdang/', period: '', tools: '',
+    highlight: {
+      title: 'React 컴포넌트 · 디자인과 코드 연결',
+      text: '화면을 React 컴포넌트로 나누고, 상품·후기·쿠폰 데이터는 별도 파일에서 한 번에 수정합니다. CSS 변수를 피그마 변수와 같은 이름으로 맞춰 디자인과 코드가 함께 움직입니다.',
+    },
+    url: 'https://eunkkong-spec.github.io/sugar-pongdang/',
+    period: '총 2일',
+    tools: [
+      { group: '기획', items: ['카페24 템플릿 벤치마킹', 'Canva', 'Notion'] },
+      { group: '디자인', items: ['Figma (모바일 420px UI)'] },
+      { group: '개발·배포', items: ['React (Vite)', 'CSS 변수', 'GitHub Pages'] },
+      { group: 'AI 활용', items: ['Claude Code'] },
+    ],
   },
   {
     title: 'The Rolling Stones 팬 페이지',
