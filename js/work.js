@@ -27,6 +27,7 @@ const WORKS = [
     ],
     url: 'https://eunkkong-spec.github.io/modoossak/index.html',
     plan: 'https://canva.link/30r5sohb8wwri9m',
+    figma: 'https://www.figma.com/design/gRToSkcA3JE2qqWW8wDwxt/%EB%82%98%EB%9D%BC%EB%B0%94%EC%9D%B4%EC%98%A4?node-id=0-1',
     period: [
       { group: '전체', items: ['2026.09.30 ~ 2026.10.22 (실작업 14일, 주말·공휴일 제외)'] },
       { group: '기획·시안', items: ['09.30 ~ 10.18'] },
