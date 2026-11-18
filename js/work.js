@@ -107,6 +107,7 @@ const WORKS = [
     period: '총 3일',
     tools: [
       { group: '기획·디자인', items: ['Canva', 'Figma', 'Illustrator'] },
+      { group: '음악·영상', items: ['YouTube 임베드'] },
       { group: '개발·배포', items: ['VS Code', 'GitHub Pages'] },
       { group: 'AI 활용', items: ['Claude', 'ChatGPT'] },
     ],
