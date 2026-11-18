@@ -103,7 +103,13 @@ const WORKS = [
       '처음엔 순서대로 끝까지 보게 하고, 다 본 뒤에는 페이지 목록으로 바로 이동하도록 설계',
       '소리 켜기/끄기 선택, 발자국 · 웃음 효과음, 유튜브 영상은 모달로 재생',
     ],
-    url: 'https://eunkkong-spec.github.io/rolling-stone/', period: '', tools: '',
+    url: 'https://eunkkong-spec.github.io/rolling-stone/',
+    period: '총 3일',
+    tools: [
+      { group: '기획·디자인', items: ['Canva', 'Figma', 'Illustrator'] },
+      { group: '개발·배포', items: ['VS Code', 'GitHub Pages'] },
+      { group: 'AI 활용', items: ['Claude', 'ChatGPT', 'Gemini'] },
+    ],
   },
 ];
 
