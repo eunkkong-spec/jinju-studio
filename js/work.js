@@ -3,7 +3,7 @@
 // url / period / tools 가 비어 있으면 상세 보기에서 버튼·자리 표시로 대신한다
 // tools: 문자열 또는 [{ group, items: [...] }] 형태로 분야별로 묶을 수 있다
 // highlight: 꼭 알리고 싶은 기술을 강조 박스로 보여준다 (없으면 생략)
-// plan: 기획서 링크 (있으면 '기획서 보기' 버튼이 생긴다)
+// plan / figma: 기획서·피그마 링크 (있으면 '기획서 보기'·'피그마 보기' 버튼이 생긴다)
 const WORKS = [
   {
     title: '나라바이오 리뉴얼',
@@ -92,6 +92,7 @@ const WORKS = [
     },
     url: 'https://eunkkong-spec.github.io/sugar-pongdang/',
     plan: 'https://canva.link/yaadxs193qj04z9',
+    figma: 'https://www.figma.com/design/vBb3R9sgZ9J06401v0GMWz/%EC%8A%88%EA%B0%80%ED%90%81%EB%8B%B9?node-id=0-1',
     period: '총 2일',
     tools: [
       { group: '기획', items: ['카페24 템플릿 벤치마킹', 'Canva', 'Notion'] },
@@ -217,6 +218,10 @@ function fillModal(i) {
   const plan = q('.work-modal-plan');
   plan.hidden = !work.plan;
   if (work.plan) plan.href = work.plan;
+
+  const figma = q('.work-modal-figma');
+  figma.hidden = !work.figma;
+  if (work.figma) figma.href = work.figma;
 }
 
 function openModal(i) {
